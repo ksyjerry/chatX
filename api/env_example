@@ -1,0 +1,9 @@
+ # OpenAI API Key
+OPENAI_API_KEY=your_openai_api_key_here
+
+# API 설정
+HOST=0.0.0.0
+PORT=8000
+
+# GPT 모델 설정
+GPT_MODEL=gpt-4-1106-preview
