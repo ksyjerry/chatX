@@ -7,9 +7,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Chat Samil",
-  description: "A ChatGPT-like interface",
-  generator: "v0.dev",
+  title: "Chat X",
+  description: "chat X",
+  generator: "",
 };
 
 export default function RootLayout({
