@@ -64,7 +64,7 @@ interface ChatHistory {
 }
 
 // API URL 설정
-const API_URL = "http://localhost:8000/api";
+const API_URL = "http://localhost:8001/api";
 
 // 파일을 base64로 변환하는 유틸리티 함수
 const fileToBase64 = (file: File): Promise<string> => {
@@ -1109,6 +1109,7 @@ export function ChatArea({
     <div className="h-full flex flex-col bg-white dark:bg-background overflow-hidden">
       {/* Header */}
       <header className="border-b border-gray-200 dark:border-border py-2 px-3 flex items-center justify-between bg-white dark:bg-background shrink-0">
+        {/* 왼쪽: 모델 선택/채팅 제목 */}
         <div className="flex items-center">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -1164,8 +1165,28 @@ export function ChatArea({
           )}
         </div>
 
+        {/* 오른쪽: 테마 토글/메뉴/유저 버튼 */}
         <div className="flex items-center gap-2">
+          {/* 메뉴: 오른쪽에 배치, 더 작고 세련된 스타일 */}
+          <nav className="ml-2">
+            <ul className="flex space-x-3">
+              <li>
+                <a href="#" className="text-gray-500 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 text-sm px-2 py-1 rounded transition-colors font-medium">문서번역</a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-500 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 text-sm px-2 py-1 rounded transition-colors font-medium">계약서 검토</a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-500 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 text-sm px-2 py-1 rounded transition-colors font-medium">AI Accountant</a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-500 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 text-sm px-2 py-1 rounded transition-colors font-medium">Tax AI</a>
+              </li>
+            </ul>
+          </nav>
+          {/* 다크모드 토글 버튼 */}
           <ThemeToggle />
+          {/* 유저 버튼 */}
           <Button
             variant="ghost"
             size="icon"
